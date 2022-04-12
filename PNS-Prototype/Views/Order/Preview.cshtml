@@ -1,0 +1,86 @@
+﻿@model IEnumerable<PNS_Prototype.Models.Fulfill>
+
+@{
+    ViewBag.Title = "Preview";
+}
+
+
+
+@*<div class="form-group">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @if (Request.UrlReferrer != null)
+                {
+                    <h2>Preview</h2>
+                    <a style="float:right;" class="bottomNav" onclick="history.go(-1); return false;" href="#">Back</a><br />
+                }
+            </div>
+        </div>
+    </div>*@
+
+
+@if (Request.UrlReferrer != null)
+{
+    <h2>Preview</h2> <a style="float:right;" class="bottomNav" onclick="history.go(-1); return false;" href="#">Back</a>
+    <br />
+}
+
+<label>Packing slip no.:</label>  @ViewBag.PackingSlipId
+<h4>Sold To:</h4>
+<h4>Deliver To:</h4>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplied)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PNS_Prototype.Models.Fulfill>
+
+@{
+    ViewBag.Title = "Picking";
+}
+
+
+
+
+<h2>Picking</h2>
+<label>Packing slip no.:</label>  @ViewBag.PackingSlipId
+<a style="float:right;" href='@Url.Action("ExitPicking", "Order")' class="btn btn-primary">Save & Exit</a>
+
+@using (Html.BeginForm("Scan", "Order", FormMethod.Get))
+{
+    <br />
+    <p>@Html.Label("scanned", "Scan item here"):</p> @Html.TextBox("scanned", null, new { @class = "form-control" })
+    <br />
+
+
+    <input type="reset" name="view" value="View" class="btn btn-success" />
+    <input type="reset" name="clear" value="Clear" class="btn btn-warning" />
+    @*<p style="float:right;"><input type="reset" name="clear" value="Print" class="btn btn-info" /></p>*@
+    <a style="float:right;" href='@Url.Action("Preview", "Order")' class="btn btn-info">Print</a>
+    <br />
+    <div id="ViewBageDiv">
+        <center><p style="color:forestgreen;">@ViewBag.Added</p></center>
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplied)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplied)
+                <p style="float:right;">@Html.ActionLink("View", "View", new { id = item.ProCode })</p>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+    }
+
+    <script>
+        $(document).ready(function () {
+            //The reset button click event
+            $(document.getElementById(reset).onclick(function () {
+                //set all the input's value to empty
+                $("input[type=text]").val("");
+
+                //hide the viewbage
+                $("#ViewBageDiv").hide();
+            });
+        });
+    </script>*@

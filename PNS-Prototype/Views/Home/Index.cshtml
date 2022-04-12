@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Pick and Scan</h1>
+
+    <a href='@Url.Action("ImportFile", "FileHandler")' class="btn btn-primary">IMPORT FILE</a>
+    <a href='@Url.Action("List", "Order")' class="btn btn-primary">ACTIVE ORDERS</a>
+</div>

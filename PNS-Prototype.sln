@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PNS-Prototype", "PNS-Prototype\PNS-Prototype.csproj", "{C7569085-BA6F-4A7A-8435-25BD87A2E418}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7569085-BA6F-4A7A-8435-25BD87A2E418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7569085-BA6F-4A7A-8435-25BD87A2E418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7569085-BA6F-4A7A-8435-25BD87A2E418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7569085-BA6F-4A7A-8435-25BD87A2E418}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21328953-128C-4AE2-B4D2-59C1F453C273}
+	EndGlobalSection
+EndGlobal
